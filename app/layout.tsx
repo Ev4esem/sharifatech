@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sharifa Tech — студия разработки",
-  description: "Sharifa Tech — студия разработки цифровых продуктов.",
+  title: "Nafa IT — студия разработки",
+  description: "Nafa IT — студия разработки цифровых продуктов.",
 };
 
 export default function RootLayout({

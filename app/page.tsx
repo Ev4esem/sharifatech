@@ -8,7 +8,7 @@ export default function Home() {
 
       <header className="mx-auto flex w-full max-w-5xl items-center justify-between px-6 py-8">
         <span className="text-lg font-semibold tracking-tight">
-          Sharifa Tech
+          Nafa IT
         </span>
         <a
           href="#contacts"
@@ -23,7 +23,7 @@ export default function Home() {
           Кейсы скоро появятся здесь
         </span>
         <h1 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">
-          Sharifa Tech — студия разработки
+          Nafa IT — студия разработки
         </h1>
         <p className="mt-6 max-w-xl text-lg text-foreground/70">
           Создаём цифровые продукты: сайты, приложения и сервисы под ключ.
@@ -36,7 +36,7 @@ export default function Home() {
       >
         <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <span className="text-sm text-foreground/50">
-            © {new Date().getFullYear()} Sharifa Tech
+            © {new Date().getFullYear()} Nafa IT
           </span>
           <a
             href="mailto:rashid.magomedov.official@gmail.com"
