@@ -1,51 +1,67 @@
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
+import { CaseCard } from "@/components/CaseCard";
+import { cases } from "@/lib/cases";
+
+const services = [
+  "Веб-сайты",
+  "Мобильные приложения",
+  "Продуктовый дизайн",
+  "Редизайн",
+];
+
 export default function Home() {
   return (
     <div className="relative flex min-h-screen flex-col overflow-hidden">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(120,119,255,0.25),transparent)] dark:bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(120,119,255,0.15),transparent)]"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(124,123,255,0.25),transparent)]"
       />
 
-      <header className="mx-auto flex w-full max-w-5xl items-center justify-between px-6 py-8">
-        <span className="text-lg font-semibold tracking-tight">
-          Nafa IT
-        </span>
-        <a
-          href="#contacts"
-          className="text-sm text-foreground/70 transition-colors hover:text-foreground"
-        >
-          Контакты
-        </a>
-      </header>
+      <SiteHeader />
 
-      <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col justify-center px-6 py-24">
-        <span className="mb-6 w-fit rounded-full border border-foreground/10 px-3 py-1 text-xs text-foreground/60">
-          Кейсы скоро появятся здесь
-        </span>
-        <h1 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">
-          Nafa IT — студия разработки
-        </h1>
-        <p className="mt-6 max-w-xl text-lg text-foreground/70">
-          Создаём цифровые продукты: сайты, приложения и сервисы под ключ.
-        </p>
+      <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-6">
+        <section className="flex flex-col justify-center py-24">
+          <span className="mb-6 w-fit rounded-full border border-border px-3 py-1 text-xs text-muted">
+            Цифровая студия
+          </span>
+          <h1 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">
+            Создаём сайты и приложения, которые доводят продукт до релиза
+          </h1>
+          <p className="mt-6 max-w-xl text-lg text-muted">
+            Nafa IT — студия полного цикла: от дизайна до разработки. Ниже —
+            кейсы, над которыми мы работали.
+          </p>
+
+          <div id="services" className="mt-10 flex flex-wrap gap-2">
+            {services.map((service) => (
+              <span
+                key={service}
+                className="rounded-full border border-border px-3 py-1.5 text-sm text-muted"
+              >
+                {service}
+              </span>
+            ))}
+          </div>
+        </section>
+
+        <section id="cases" className="scroll-mt-24 border-t border-border py-24">
+          <div className="mb-10 flex items-end justify-between">
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+              Кейсы
+            </h2>
+            <span className="text-sm text-muted">{cases.length} проектов</span>
+          </div>
+
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {cases.map((item) => (
+              <CaseCard key={item.slug} item={item} />
+            ))}
+          </div>
+        </section>
       </main>
 
-      <footer
-        id="contacts"
-        className="mx-auto w-full max-w-5xl border-t border-foreground/10 px-6 py-10"
-      >
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-          <span className="text-sm text-foreground/50">
-            © {new Date().getFullYear()} Nafa IT
-          </span>
-          <a
-            href="mailto:rashid.magomedov.official@gmail.com"
-            className="text-sm text-foreground/70 transition-colors hover:text-foreground"
-          >
-            rashid.magomedov.official@gmail.com
-          </a>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

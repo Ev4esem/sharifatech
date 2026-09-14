@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nafa IT — студия разработки",
-  description: "Nafa IT — студия разработки цифровых продуктов.",
+  title: "Nafa IT — цифровая студия",
+  description:
+    "Nafa IT — студия полного цикла: сайты и мобильные приложения под ключ.",
 };
 
 export default function RootLayout({
