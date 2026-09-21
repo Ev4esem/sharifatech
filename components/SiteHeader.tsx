@@ -1,10 +1,18 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export function SiteHeader() {
   return (
     <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-8">
-      <Link href="/" className="text-lg font-semibold tracking-tight">
-        Nafa IT
+      <Link href="/" className="flex items-center">
+        <Image
+          src="/logo.png"
+          alt="Nafa IT"
+          width={899}
+          height={250}
+          preload
+          className="h-7 w-auto sm:h-8"
+        />
       </Link>
       <nav className="flex items-center gap-6 text-sm text-muted">
         <Link
