@@ -6,7 +6,7 @@ export function ContactSection() {
       id="contacts"
       className="scroll-mt-24 border-t border-border py-24"
     >
-      <div className="mb-10 max-w-xl">
+      <div className="mx-auto mb-10 max-w-xl text-center">
         <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
           Обсудим проект
         </h2>
@@ -16,7 +16,7 @@ export function ContactSection() {
         </p>
       </div>
 
-      <div className="max-w-xl">
+      <div className="mx-auto max-w-xl">
         <ContactForm />
       </div>
     </section>
