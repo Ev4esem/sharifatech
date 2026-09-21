@@ -9,6 +9,7 @@ export type CaseStudy = {
   task: string;
   process: { title: string; description: string }[];
   result: string;
+  heroImage?: string;
 };
 
 export const cases: CaseStudy[] = [
@@ -97,6 +98,7 @@ export const cases: CaseStudy[] = [
     index: "03",
     title: "Лендинг курса Маржанат Омаровой",
     category: "Лендинг",
+    heroImage: "/cases/course-landing/hero.jpg",
     status: "Завершён",
     services: ["Исследование", "Веб-дизайн", "Разработка"],
     summary:

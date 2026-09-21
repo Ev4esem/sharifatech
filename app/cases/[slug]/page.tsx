@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -91,12 +92,25 @@ export default async function CasePage({
           ))}
         </div>
 
-        <div className="glass-card mt-12 flex aspect-video items-center justify-center">
-          <div aria-hidden className="glass-card-glow" />
-          <div aria-hidden className="glass-card-sheen" />
-          <span className="relative z-10 text-8xl font-semibold tracking-tight text-foreground/10">
-            {item.index}
-          </span>
+        <div className="glass-card relative mt-12 flex aspect-video items-center justify-center overflow-hidden">
+          {item.heroImage ? (
+            <Image
+              src={item.heroImage}
+              alt={item.title}
+              fill
+              sizes="(min-width: 768px) 768px, 100vw"
+              className="object-cover"
+              preload
+            />
+          ) : (
+            <>
+              <div aria-hidden className="glass-card-glow" />
+              <div aria-hidden className="glass-card-sheen" />
+              <span className="relative z-10 text-8xl font-semibold tracking-tight text-foreground/10">
+                {item.index}
+              </span>
+            </>
+          )}
         </div>
 
         <section className="mt-16">

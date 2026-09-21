@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { CaseStudy } from "@/lib/cases";
 
@@ -14,11 +15,21 @@ export function CaseCard({ item }: { item: CaseStudy }) {
       <div className="relative z-10 flex flex-col">
         <div
           aria-hidden
-          className="flex aspect-[4/3] items-center justify-center border-b border-white/5"
+          className="relative flex aspect-[4/3] items-center justify-center overflow-hidden border-b border-white/5"
         >
-          <span className="text-6xl font-semibold tracking-tight text-foreground/10 transition-colors group-hover:text-accent/30 sm:text-7xl">
-            {item.index}
-          </span>
+          {item.heroImage ? (
+            <Image
+              src={item.heroImage}
+              alt=""
+              fill
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+              className="object-cover"
+            />
+          ) : (
+            <span className="text-6xl font-semibold tracking-tight text-foreground/10 transition-colors group-hover:text-accent/30 sm:text-7xl">
+              {item.index}
+            </span>
+          )}
         </div>
 
         <div className="flex flex-1 flex-col gap-3 p-6">
