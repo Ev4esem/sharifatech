@@ -1,6 +1,7 @@
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { CaseCard } from "@/components/CaseCard";
+import { HeroGlow } from "@/components/HeroGlow";
 import { cases } from "@/lib/cases";
 
 const services = [
@@ -13,10 +14,7 @@ const services = [
 export default function Home() {
   return (
     <div className="relative flex min-h-screen flex-col overflow-hidden">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(124,123,255,0.25),transparent)]"
-      />
+      <HeroGlow />
 
       <SiteHeader />
 
