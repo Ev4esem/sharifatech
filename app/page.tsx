@@ -4,6 +4,7 @@ import { CaseCard } from "@/components/CaseCard";
 import { HeroVideo } from "@/components/HeroVideo";
 import { Services } from "@/components/Services";
 import { ClientsMarquee } from "@/components/ClientsMarquee";
+import { ContactSection } from "@/components/ContactSection";
 import { cases } from "@/lib/cases";
 
 export default function Home() {
@@ -27,7 +28,7 @@ export default function Home() {
           </p>
         </section>
 
-        <Services />
+        <ClientsMarquee />
 
         <section id="cases" className="scroll-mt-24 border-t border-border py-24">
           <div className="mb-10 flex items-end justify-between">
@@ -44,7 +45,9 @@ export default function Home() {
           </div>
         </section>
 
-        <ClientsMarquee />
+        <Services />
+
+        <ContactSection />
       </main>
 
       <SiteFooter />
