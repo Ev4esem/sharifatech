@@ -144,17 +144,42 @@ export default async function CasePage({
           </p>
         </section>
 
-        <div className="mt-20 grid grid-cols-1 gap-3 sm:grid-cols-3">
-          {[1, 2, 3].map((i) => (
-            <div
-              key={i}
-              aria-hidden
-              className="flex aspect-square items-center justify-center rounded-xl border border-dashed border-border text-xs text-muted"
-            >
-              Скриншот {i}
+        {item.gallery ? (
+          <section className="mt-20">
+            <h2 className="text-xl font-semibold tracking-tight">
+              Скриншоты
+            </h2>
+            <div className="mt-6 grid grid-cols-2 items-start gap-3 sm:grid-cols-3">
+              {item.gallery.map((shot) => (
+                <div
+                  key={shot.src}
+                  className="overflow-hidden rounded-xl border border-border"
+                >
+                  <Image
+                    src={shot.src}
+                    alt=""
+                    width={shot.width}
+                    height={shot.height}
+                    sizes="(min-width: 640px) 33vw, 50vw"
+                    className="h-auto w-full"
+                  />
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </section>
+        ) : (
+          <div className="mt-20 grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {[1, 2, 3].map((i) => (
+              <div
+                key={i}
+                aria-hidden
+                className="flex aspect-square items-center justify-center rounded-xl border border-dashed border-border text-xs text-muted"
+              >
+                Скриншот {i}
+              </div>
+            ))}
+          </div>
+        )}
 
         <Link
           href={`/cases/${next.slug}`}

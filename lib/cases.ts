@@ -10,6 +10,7 @@ export type CaseStudy = {
   process: { title: string; description: string }[];
   result: string;
   heroImage?: string;
+  gallery?: { src: string; width: number; height: number }[];
 };
 
 export const cases: CaseStudy[] = [
@@ -99,6 +100,33 @@ export const cases: CaseStudy[] = [
     title: "Лендинг курса Маржанат Омаровой",
     category: "Лендинг",
     heroImage: "/cases/course-landing/hero.jpg",
+    gallery: [
+      {
+        src: "/cases/course-landing/hero-mobile.jpg",
+        width: 540,
+        height: 1200,
+      },
+      {
+        src: "/cases/course-landing/pricing.jpg",
+        width: 1920,
+        height: 1080,
+      },
+      {
+        src: "/cases/course-landing/symptoms.jpg",
+        width: 1920,
+        height: 1080,
+      },
+      {
+        src: "/cases/course-landing/faq-tabs.jpg",
+        width: 1920,
+        height: 1079,
+      },
+      {
+        src: "/cases/course-landing/pricing-mobile.jpg",
+        width: 540,
+        height: 1200,
+      },
+    ],
     status: "Завершён",
     services: ["Исследование", "Веб-дизайн", "Разработка"],
     summary:
