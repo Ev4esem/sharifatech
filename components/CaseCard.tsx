@@ -15,7 +15,7 @@ export function CaseCard({ item }: { item: CaseStudy }) {
       <div className="relative z-10 flex flex-col">
         <div
           aria-hidden
-          className="relative flex aspect-[4/3] items-center justify-center overflow-hidden border-b border-white/5"
+          className="relative flex aspect-video items-center justify-center overflow-hidden border-b border-white/5"
         >
           {item.heroImage ? (
             <Image
