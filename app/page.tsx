@@ -2,14 +2,9 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { CaseCard } from "@/components/CaseCard";
 import { HeroVideo } from "@/components/HeroVideo";
+import { Services } from "@/components/Services";
+import { ClientsMarquee } from "@/components/ClientsMarquee";
 import { cases } from "@/lib/cases";
-
-const services = [
-  "Веб-сайты",
-  "Мобильные приложения",
-  "Продуктовый дизайн",
-  "Редизайн",
-];
 
 export default function Home() {
   return (
@@ -30,18 +25,9 @@ export default function Home() {
             Nafa IT — студия полного цикла: от дизайна до разработки. Ниже —
             кейсы, над которыми мы работали.
           </p>
-
-          <div id="services" className="mt-10 flex flex-wrap gap-2">
-            {services.map((service) => (
-              <span
-                key={service}
-                className="rounded-full border border-border px-3 py-1.5 text-sm text-muted"
-              >
-                {service}
-              </span>
-            ))}
-          </div>
         </section>
+
+        <Services />
 
         <section id="cases" className="scroll-mt-24 border-t border-border py-24">
           <div className="mb-10 flex items-end justify-between">
@@ -57,6 +43,8 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        <ClientsMarquee />
       </main>
 
       <SiteFooter />
