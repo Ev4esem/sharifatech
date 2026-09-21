@@ -3,20 +3,27 @@
 import { useState, type FormEvent } from "react";
 
 const CONTACT_EMAIL = "rashid.magomedov.official@gmail.com";
+const PHONE_PATTERN = "^\\+?[0-9\\s\\-\\(\\)]{7,20}$";
 
 export function ContactForm() {
   const [name, setName] = useState("");
-  const [contact, setContact] = useState("");
+  const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
+    const form = e.currentTarget;
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
     const subject = encodeURIComponent(
       `Заявка с сайта${name ? ` — ${name}` : ""}`
     );
     const body = encodeURIComponent(
-      `Имя: ${name}\nКонтакт для связи: ${contact}\n\n${message}`
+      `Имя: ${name}\nТелефон: ${phone}\n\n${message}`
     );
 
     window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
@@ -42,13 +49,16 @@ export function ContactForm() {
           </label>
 
           <label className="flex flex-col gap-2 text-sm">
-            <span className="text-muted">Контакт для связи</span>
+            <span className="text-muted">Телефон</span>
             <input
               required
-              value={contact}
-              onChange={(e) => setContact(e.target.value)}
+              type="tel"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              pattern={PHONE_PATTERN}
+              title="Введите номер телефона, например +7 900 000-00-00"
               className="rounded-lg border border-border bg-white/[0.03] px-3 py-2.5 text-foreground outline-none transition-colors focus:border-accent"
-              placeholder="Telegram, телефон или почта"
+              placeholder="+7 900 000-00-00"
             />
           </label>
         </div>

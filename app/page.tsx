@@ -4,6 +4,7 @@ import { CaseCard } from "@/components/CaseCard";
 import { HeroVideo } from "@/components/HeroVideo";
 import { Services } from "@/components/Services";
 import { ClientsMarquee } from "@/components/ClientsMarquee";
+import { HowWeWork } from "@/components/HowWeWork";
 import { ContactSection } from "@/components/ContactSection";
 import { cases } from "@/lib/cases";
 
@@ -44,6 +45,8 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        <HowWeWork />
 
         <Services />
 
