@@ -21,6 +21,28 @@ export const cases: CaseStudy[] = [
     title: "Приложение Sharifa",
     category: "Мобильное приложение",
     heroImage: "/cases/sharifa-app/hero.png",
+    gallery: [
+      {
+        src: "/cases/sharifa-app/home-prayer.jpg",
+        width: 540,
+        height: 1200,
+      },
+      {
+        src: "/cases/sharifa-app/ai-chat.jpg",
+        width: 540,
+        height: 1200,
+      },
+      {
+        src: "/cases/sharifa-app/quran-reading.jpg",
+        width: 540,
+        height: 1200,
+      },
+      {
+        src: "/cases/sharifa-app/azkar-translation.jpg",
+        width: 540,
+        height: 1200,
+      },
+    ],
     status: "Завершён",
     services: ["Продуктовый дизайн", "Разработка", "ИИ-чат"],
     summary:
