@@ -21,10 +21,4 @@ export const services = [
   },
 ];
 
-export const clients = [
-  "Sharifa",
-  "Mybina",
-  "Новоград",
-  "Маржанат Омарова",
-  "Мой дневник",
-];
+export const clients = ["Sharifa", "Новоград", "Мой дневник"];
