@@ -88,6 +88,24 @@ export const cases: CaseStudy[] = [
     index: "02",
     title: "Приложение Mybina",
     category: "Мобильное приложение",
+    heroImage: "/cases/mybina/hero.png",
+    gallery: [
+      {
+        src: "/cases/mybina/home.jpg",
+        width: 1080,
+        height: 2400,
+      },
+      {
+        src: "/cases/mybina/projects.jpg",
+        width: 1080,
+        height: 2400,
+      },
+      {
+        src: "/cases/mybina/stats.jpg",
+        width: 1080,
+        height: 2400,
+      },
+    ],
     status: "Завершён",
     services: ["Продуктовый дизайн", "Разработка", "Подписки"],
     summary:
