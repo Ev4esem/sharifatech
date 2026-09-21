@@ -1,7 +1,7 @@
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { CaseCard } from "@/components/CaseCard";
-import { HeroGlow } from "@/components/HeroGlow";
+import { HeroVideo } from "@/components/HeroVideo";
 import { cases } from "@/lib/cases";
 
 const services = [
@@ -14,7 +14,7 @@ const services = [
 export default function Home() {
   return (
     <div className="relative flex min-h-screen flex-col overflow-hidden">
-      <HeroGlow />
+      <HeroVideo />
 
       <SiteHeader />
 
