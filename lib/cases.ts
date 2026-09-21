@@ -188,6 +188,19 @@ export const cases: CaseStudy[] = [
     title: "Сайт ЖК «Центральный»",
     category: "Веб-сайт",
     siteUrl: "https://nova-grad.ru/",
+    heroImage: "/cases/zastroyshchik/hero.jpg",
+    gallery: [
+      {
+        src: "/cases/zastroyshchik/architecture.jpg",
+        width: 1920,
+        height: 1080,
+      },
+      {
+        src: "/cases/zastroyshchik/planirovki.jpg",
+        width: 1920,
+        height: 1080,
+      },
+    ],
     status: "Завершён",
     services: ["Веб-дизайн", "UX", "Разработка"],
     summary:
