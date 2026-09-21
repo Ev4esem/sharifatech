@@ -200,6 +200,24 @@ export const cases: CaseStudy[] = [
     index: "05",
     title: "CRM «Мой дневник»",
     category: "CRM-платформа",
+    heroImage: "/cases/moy-dnevnik/landing.jpg",
+    gallery: [
+      {
+        src: "/cases/moy-dnevnik/dashboard.jpg",
+        width: 1920,
+        height: 1049,
+      },
+      {
+        src: "/cases/moy-dnevnik/schedule.jpg",
+        width: 1920,
+        height: 1042,
+      },
+      {
+        src: "/cases/moy-dnevnik/students.jpg",
+        width: 1920,
+        height: 1042,
+      },
+    ],
     status: "В разработке",
     services: ["Продуктовый дизайн", "Разработка", "Интеграции"],
     summary:
