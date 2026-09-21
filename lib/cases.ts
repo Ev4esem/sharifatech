@@ -20,6 +20,7 @@ export const cases: CaseStudy[] = [
     index: "01",
     title: "Приложение Sharifa",
     category: "Мобильное приложение",
+    heroImage: "/cases/sharifa-app/hero.png",
     status: "Завершён",
     services: ["Продуктовый дизайн", "Разработка", "ИИ-чат"],
     summary:
