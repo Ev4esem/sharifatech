@@ -11,6 +11,7 @@ export type CaseStudy = {
   result: string;
   heroImage?: string;
   gallery?: { src: string; width: number; height: number }[];
+  siteUrl?: string;
 };
 
 export const cases: CaseStudy[] = [
@@ -99,6 +100,7 @@ export const cases: CaseStudy[] = [
     index: "03",
     title: "Лендинг курса Маржанат Омаровой",
     category: "Лендинг",
+    siteUrl: "https://loromarova.ru/",
     heroImage: "/cases/course-landing/hero.jpg",
     gallery: [
       {
@@ -162,6 +164,7 @@ export const cases: CaseStudy[] = [
     index: "04",
     title: "Сайт ЖК «Центральный»",
     category: "Веб-сайт",
+    siteUrl: "https://nova-grad.ru/",
     status: "Завершён",
     services: ["Веб-дизайн", "UX", "Разработка"],
     summary:

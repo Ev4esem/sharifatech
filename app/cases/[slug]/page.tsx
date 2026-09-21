@@ -81,7 +81,7 @@ export default async function CasePage({
         </h1>
         <p className="mt-4 text-lg text-muted">{item.summary}</p>
 
-        <div className="mt-6 flex flex-wrap gap-2">
+        <div className="mt-6 flex flex-wrap items-center gap-2">
           {item.services.map((service) => (
             <span
               key={service}
@@ -91,6 +91,18 @@ export default async function CasePage({
             </span>
           ))}
         </div>
+
+        {item.siteUrl && (
+          <a
+            href={item.siteUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
+          >
+            Перейти на сайт
+            <span aria-hidden>↗</span>
+          </a>
+        )}
 
         <div className="glass-card relative mt-12 flex aspect-video items-center justify-center overflow-hidden">
           {item.heroImage ? (
