@@ -91,11 +91,10 @@ export default async function CasePage({
           ))}
         </div>
 
-        <div
-          aria-hidden
-          className="mt-12 flex aspect-video items-center justify-center overflow-hidden rounded-2xl border border-border bg-[radial-gradient(circle_at_30%_20%,rgba(124,123,255,0.25),transparent_60%)]"
-        >
-          <span className="text-8xl font-semibold tracking-tight text-foreground/10">
+        <div className="glass-card mt-12 flex aspect-video items-center justify-center">
+          <div aria-hidden className="glass-card-glow" />
+          <div aria-hidden className="glass-card-sheen" />
+          <span className="relative z-10 text-8xl font-semibold tracking-tight text-foreground/10">
             {item.index}
           </span>
         </div>
@@ -145,9 +144,11 @@ export default async function CasePage({
 
         <Link
           href={`/cases/${next.slug}`}
-          className="group mt-24 flex items-center justify-between rounded-2xl border border-border p-6 transition-colors hover:border-accent/50"
+          className="glass-card group mt-24 flex items-center justify-between p-6"
         >
-          <div>
+          <div aria-hidden className="glass-card-glow" />
+          <div aria-hidden className="glass-card-sheen" />
+          <div className="relative z-10">
             <p className="text-xs uppercase tracking-wider text-muted">
               Следующий кейс
             </p>
@@ -155,7 +156,7 @@ export default async function CasePage({
               {next.title}
             </p>
           </div>
-          <span className="text-lg text-muted transition-transform group-hover:translate-x-1 group-hover:text-accent">
+          <span className="relative z-10 text-lg text-muted transition-transform group-hover:translate-x-1 group-hover:text-accent">
             →
           </span>
         </Link>
