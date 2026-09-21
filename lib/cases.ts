@@ -200,6 +200,7 @@ export const cases: CaseStudy[] = [
     index: "05",
     title: "CRM «Мой дневник»",
     category: "CRM-платформа",
+    siteUrl: "https://mojdnevnik.ru/",
     heroImage: "/cases/moy-dnevnik/landing.jpg",
     gallery: [
       {
