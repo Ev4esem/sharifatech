@@ -5,12 +5,15 @@ import { useState, type FormEvent } from "react";
 const CONTACT_EMAIL = "rashid.magomedov.official@gmail.com";
 const PHONE_PATTERN = "^\\+?[0-9\\s\\-\\(\\)]{7,20}$";
 
+type Status = "idle" | "sending" | "success" | "error";
+
 export function ContactForm() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<Status>("idle");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     const form = e.currentTarget;
@@ -19,14 +22,31 @@ export function ContactForm() {
       return;
     }
 
-    const subject = encodeURIComponent(
-      `Заявка с сайта${name ? ` — ${name}` : ""}`
-    );
-    const body = encodeURIComponent(
-      `Имя: ${name}\nТелефон: ${phone}\n\n${message}`
-    );
+    setStatus("sending");
 
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone, message }),
+      });
+
+      if (!res.ok) throw new Error("request failed");
+
+      setStatus("success");
+      setName("");
+      setPhone("");
+      setMessage("");
+    } catch {
+      setStatus("error");
+      const subject = encodeURIComponent(
+        `Заявка с сайта${name ? ` — ${name}` : ""}`
+      );
+      const body = encodeURIComponent(
+        `Имя: ${name}\nТелефон: ${phone}\n\n${message}`
+      );
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+    }
   }
 
   return (
@@ -74,12 +94,26 @@ export function ContactForm() {
           />
         </label>
 
-        <button
-          type="submit"
-          className="mt-2 w-fit rounded-full bg-accent px-6 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
-        >
-          Отправить заявку
-        </button>
+        <div className="mt-2 flex items-center gap-4">
+          <button
+            type="submit"
+            disabled={status === "sending"}
+            className="w-fit rounded-full bg-accent px-6 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90 disabled:opacity-60"
+          >
+            {status === "sending" ? "Отправляем…" : "Отправить заявку"}
+          </button>
+
+          {status === "success" && (
+            <span className="text-sm text-accent">
+              Заявка отправлена, скоро ответим
+            </span>
+          )}
+          {status === "error" && (
+            <span className="text-sm text-muted">
+              Не получилось — открыли письмо на почту
+            </span>
+          )}
+        </div>
       </div>
     </form>
   );
